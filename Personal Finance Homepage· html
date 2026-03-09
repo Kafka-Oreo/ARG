@@ -1,301 +1,458 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Xiang Senxin | Finance Student</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项森鑫 | 个人简历</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50; /* 深蓝灰色 */
+            --accent-color: #c0392b; /* 华政红风格 */
+            --bg-color: #f4f7f6;
+            --text-color: #333;
+            --card-bg: #ffffff;
+            --section-spacing: 60px;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
 
-<style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
 
-*{box-sizing:border-box}
+        /* 导航栏 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
 
-body{
-margin:0;
-font-family:'Inter',sans-serif;
-background:#0f172a;
-color:#e2e8f0;
-line-height:1.7;
-}
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-header{
-background:linear-gradient(135deg,#0f172a,#1e293b);
-padding:80px 20px;
-text-align:center;
-}
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-.hero-name{
-font-size:40px;
-font-weight:600;
-margin-bottom:10px;
-}
+        .lang-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
 
-.hero-desc{
-font-size:18px;
-opacity:0.9;
-}
+        .lang-btn:hover {
+            background-color: var(--accent-color);
+        }
 
-.container{
-max-width:1000px;
-margin:auto;
-padding:40px 25px;
-}
+        /* 主体容器 */
+        main {
+            max-width: 900px;
+            margin: 100px auto 40px;
+            padding: 0 20px;
+        }
 
-section{
-margin-bottom:60px;
-}
+        /* 头部简介区域 */
+        .hero {
+            text-align: center;
+            margin-bottom: var(--section-spacing);
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
 
-h2{
-font-size:24px;
-margin-bottom:20px;
-border-left:4px solid #38bdf8;
-padding-left:12px;
-}
+        .avatar-placeholder {
+            width: 120px;
+            height: 120px;
+            background-color: #ddd;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #666;
+            overflow: hidden;
+        }
+        
+        .avatar-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-.card{
-background:#1e293b;
-padding:22px;
-border-radius:10px;
-margin-top:15px;
-box-shadow:0 10px 30px rgba(0,0,0,0.3);
-transition:transform 0.2s;
-}
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 2.2rem;
+        }
 
-.card:hover{
-transform:translateY(-4px);
-}
+        .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
+        .intro-text {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #555;
+            text-align: left;
+        }
 
-.tag{
-display:inline-block;
-background:#0ea5e9;
-padding:5px 10px;
-border-radius:6px;
-font-size:12px;
-margin-right:6px;
-margin-top:6px;
-}
+        /* 通用板块样式 */
+        section {
+            background: var(--card-bg);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary-color);
+        }
 
-.skills{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-}
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
 
-.skill{
-background:#334155;
-padding:8px 14px;
-border-radius:6px;
-font-size:14px;
-}
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 24px;
+            background-color: var(--accent-color);
+            margin-right: 12px;
+            border-radius: 4px;
+        }
 
-footer{
-text-align:center;
-padding:30px;
-background:#020617;
-margin-top:60px;
-}
+        h3 {
+            color: #444;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
 
-.lang-btn{
-position:fixed;
-top:20px;
-right:20px;
-background:#0ea5e9;
-border:none;
-padding:10px 18px;
-border-radius:6px;
-cursor:pointer;
-font-weight:600;
-}
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
 
-.avatar{
-width:110px;
-height:110px;
-border-radius:50%;
-margin-bottom:20px;
-border:3px solid #38bdf8;
-}
+        li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
 
-.social a{
-color:#38bdf8;
-margin-right:15px;
-text-decoration:none;
-font-size:14px;
-}
+        li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
 
-</style>
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            background-color: #eef2f5;
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        /* 联系方式 */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .contact-item {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .contact-label {
+            font-weight: bold;
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* 底部 */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 600px) {
+            .nav-container {
+                padding: 1rem;
+            }
+            h1 { font-size: 1.8rem; }
+            section { padding: 20px; }
+        }
+    </style>
 </head>
-
 <body>
 
-<button class="lang-btn" onclick="toggleLanguage()">English</button>
+    <!-- 导航栏 -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <!-- 这里可以放校徽图片，目前用文字代替 -->
+                <span>ECUPL Finance</span>
+            </div>
+            <button class="lang-btn" onclick="toggleLanguage()">English / 中文</button>
+        </div>
+    </header>
 
-<header>
-<img class="avatar" src="https://i.imgur.com/6VBx3io.png">
+    <main>
+        <!-- 一、个人简介 -->
+        <div class="hero">
+            <div class="avatar-placeholder">
+                <!-- 请替换为您的照片路径，例如 src="photo.jpg" -->
+                <img src="" alt="Profile Photo" onerror="this.style.display='none'; this.parentElement.innerText='Photo'">
+            </div>
+            <h1 data-zh="项森鑫" data-en="Xiang Senxin">项森鑫</h1>
+            <p class="subtitle" data-zh="华东政法大学商学院 · 金融学大二" data-en="Sophomore in Finance, Business School, ECUPL">华东政法大学商学院 · 金融学大二</p>
+            
+            <div class="intro-text">
+                <p data-zh="专注于金融理论与实务的交叉领域，对资本市场、投资分析和金融科技有着浓厚兴趣。目前正积极探索金融与法律交叉领域的知识体系，以培养复合型专业能力为目标。" 
+                   data-en="Focusing on the intersection of financial theory and practice, with a strong interest in capital markets, investment analysis, and fintech. Currently exploring the knowledge system at the crossroads of finance and law, aiming to cultivate composite professional capabilities.">
+                   专注于金融理论与实务的交叉领域，对资本市场、投资分析和金融科技有着浓厚兴趣。目前正积极探索金融与法律交叉领域的知识体系，以培养复合型专业能力为目标。
+                </p>
+            </div>
+        </div>
 
-<div class="hero-name" data-zh="项森鑫" data-en="Xiang Senxin">项森鑫</div>
+        <!-- 二、学术与专业背景 -->
+        <section>
+            <h2 data-zh="学术与专业背景" data-en="Academic & Professional Background">学术与专业背景</h2>
+            
+            <h3 data-zh="教育背景" data-en="Education">教育背景</h3>
+            <ul>
+                <li>
+                    <strong data-zh="主修专业" data-en="Major">主修专业</strong>: 
+                    <span data-zh="金融学（商学院，华东政法大学）" data-en="Finance (Business School, East China University of Political Science and Law)">金融学（商学院，华东政法大学）</span>
+                </li>
+            </ul>
 
-<div class="hero-desc" 
-data-zh="金融学本科生 · 金融与法律交叉研究" 
-data-en="Finance Undergraduate · Finance & Law Interdisciplinary Interest">
-金融学本科生 · 金融与法律交叉研究
-</div>
+            <h3 data-zh="核心课程" data-en="Core Courses">核心课程</h3>
+            <div class="tag-container">
+                <span class="tag" data-zh="货币银行学" data-en="Money and Banking">货币银行学</span>
+                <span class="tag" data-zh="投资学" data-en="Investments">投资学</span>
+                <span class="tag" data-zh="公司金融" data-en="Corporate Finance">公司金融</span>
+                <span class="tag" data-zh="证券投资分析" data-en="Security Investment Analysis">证券投资分析</span>
+                <span class="tag" data-zh="金融市场学" data-en="Financial Markets">金融市场学</span>
+                <span class="tag" data-zh="金融风险管理" data-en="Financial Risk Management">金融风险管理</span>
+            </div>
 
-</header>
+            <h3 data-zh="特色优势" data-en="Unique Advantages">特色优势</h3>
+            <p data-zh="在华政的跨学科环境中，同时接触法律基础课程，培养金融合规与法律风险意识。" 
+               data-en="In ECUPL's interdisciplinary environment, I simultaneously engage with legal foundation courses, cultivating awareness of financial compliance and legal risks.">
+               在华政的跨学科环境中，同时接触法律基础课程，培养金融合规与法律风险意识。
+            </p>
 
-<div class="container">
+            <h3 data-zh="学术方向" data-en="Academic Focus">学术方向</h3>
+            <p data-zh="关注数字金融、绿色金融、金融市场创新等领域。" 
+               data-en="Focusing on Digital Finance, Green Finance, and Financial Market Innovation.">
+               关注数字金融、绿色金融、金融市场创新等领域。
+            </p>
+        </section>
 
-<section>
-<h2 data-zh="个人简介" data-en="About">个人简介</h2>
+        <!-- 三、项目与实践经历 -->
+        <section>
+            <h2 data-zh="项目与实践经历" data-en="Projects & Practical Experience">项目与实践经历</h2>
+            
+            <h3 data-zh="学术研究项目" data-en="Academic Research Projects">学术研究项目</h3>
+            <ul>
+                <li data-zh="课程论文与小组研究：如“金融科技对传统银行业的影响”、“中国债券市场发展分析”等。" 
+                    data-en="Course Papers & Group Research: e.g., 'Impact of Fintech on Traditional Banking', 'Analysis of China's Bond Market Development'.">
+                    课程论文与小组研究：如“金融科技对传统银行业的影响”、“中国债券市场发展分析”等。
+                </li>
+            </ul>
 
-<div class="card">
-<p
- data-zh="华东政法大学商学院金融学专业本科生。主要关注资本市场、投资分析以及金融科技的发展。同时在跨学科环境中探索金融与法律的结合，关注金融合规、监管与风险管理等问题。"
- data-en="Finance undergraduate at the Business School of ECUPL. Interested in capital markets, investment analysis, and financial technology. Also exploring interdisciplinary connections between finance and law, with a focus on compliance, regulation, and risk management.">
-华东政法大学商学院金融学专业本科生。
-</p>
-</div>
-</section>
+            <h3 data-zh="模拟实践" data-en="Simulations">模拟实践</h3>
+            <ul>
+                <li data-zh="股票/期货模拟交易、投资组合管理模拟、企业价值评估案例分析。" 
+                    data-en="Stock/Futures Simulation Trading, Portfolio Management Simulation, Corporate Valuation Case Studies.">
+                    股票/期货模拟交易、投资组合管理模拟、企业价值评估案例分析。
+                </li>
+            </ul>
 
-<section>
-<h2 data-zh="研究兴趣" data-en="Research Interests">研究兴趣</h2>
+            <h3 data-zh="竞赛与活动" data-en="Competitions & Activities">竞赛与活动</h3>
+            <ul>
+                <li data-zh="参与金融建模比赛、案例分析大赛及投资挑战赛。" 
+                    data-en="Participated in Financial Modeling Competitions, Case Analysis Contests, and Investment Challenges.">
+                    参与金融建模比赛、案例分析大赛及投资挑战赛。
+                </li>
+                <li data-zh="活跃于金融社团，参与组织学术讲座及行业分享会。" 
+                    data-en="Active in Finance Clubs; organized academic lectures and industry sharing sessions.">
+                    活跃于金融社团，参与组织学术讲座及行业分享会。
+                </li>
+            </ul>
+        </section>
 
-<div class="card">
-<span class="tag">Digital Finance</span>
-<span class="tag">Green Finance</span>
-<span class="tag">Capital Markets</span>
-<span class="tag">Financial Technology</span>
-<span class="tag">Financial Regulation</span>
-</div>
+        <!-- 四、技能与专长 -->
+        <section>
+            <h2 data-zh="技能与专长" data-en="Skills & Expertise">技能与专长</h2>
+            
+            <h3 data-zh="专业能力" data-en="Professional Skills">专业能力</h3>
+            <div class="tag-container">
+                <span class="tag" data-zh="财务分析" data-en="Financial Analysis">财务分析</span>
+                <span class="tag" data-zh="数据分析" data-en="Data Analysis">数据分析</span>
+                <span class="tag" data-zh="金融建模" data-en="Financial Modeling">金融建模</span>
+                <span class="tag" data-zh="市场研究" data-en="Market Research">市场研究</span>
+            </div>
 
-</section>
+            <h3 data-zh="技术工具" data-en="Technical Tools">技术工具</h3>
+            <div class="tag-container">
+                <span class="tag">Excel (Advanced)</span>
+                <span class="tag">PowerPoint</span>
+                <span class="tag" data-zh="Python/R 基础" data-en="Python/R Basics">Python/R 基础</span>
+                <span class="tag">Wind / 同花顺</span>
+            </div>
 
-<section>
-<h2 data-zh="项目与实践" data-en="Projects & Practice">项目与实践</h2>
+            <h3 data-zh="语言能力" data-en="Languages">语言能力</h3>
+            <p data-zh="英语（CET-4/6级水平），具备专业的金融英语阅读能力。" 
+               data-en="English (CET-4/6 Level), capable of reading professional financial English materials.">
+               英语（CET-4/6级水平），具备专业的金融英语阅读能力。
+            </p>
 
-<div class="grid">
+            <h3 data-zh="软技能" data-en="Soft Skills">软技能</h3>
+            <p data-zh="团队协作、数据分析思维、报告撰写、公开演讲。" 
+               data-en="Teamwork, Data-driven Thinking, Report Writing, Public Speaking.">
+               团队协作、数据分析思维、报告撰写、公开演讲。
+            </p>
+        </section>
 
-<div class="card">
-<b>FinTech Research</b>
-<p data-zh="研究金融科技对传统银行业务模式的影响。"
- data-en="Research on the impact of fintech on traditional banking.">
-研究金融科技对传统银行业影响
-</p>
-</div>
+        <!-- 五、未来规划 -->
+        <section>
+            <h2 data-zh="未来规划" data-en="Future Planning">未来规划</h2>
+            <ul>
+                <li>
+                    <strong data-zh="短期目标（大学期间）" data-en="Short-term (During University)">短期目标（大学期间）</strong>: 
+                    <span data-zh="夯实金融专业基础，考取相关证书（如证券/基金从业资格），参与高质量实习。" 
+                          data-en="Solidify financial foundations, obtain relevant certificates (e.g., Securities/Fund Qualification), and participate in high-quality internships.">
+                          夯实金融专业基础，考取相关证书（如证券/基金从业资格），参与高质量实习。
+                    </span>
+                </li>
+                <li>
+                    <strong data-zh="中期目标（毕业后）" data-en="Mid-term (After Graduation)">中期目标（毕业后）</strong>: 
+                    <span data-zh="在金融机构（券商、银行、基金等）或金融科技公司从事分析、研究或投资相关工作。" 
+                          data-en="Work in analysis, research, or investment roles at financial institutions (Brokerages, Banks, Funds) or Fintech companies.">
+                          在金融机构（券商、银行、基金等）或金融科技公司从事分析、研究或投资相关工作。
+                    </span>
+                </li>
+                <li>
+                    <strong data-zh="长期愿景" data-en="Long-term Vision">长期愿景</strong>: 
+                    <span data-zh="成为精通金融与法律的复合型人才，在金融创新或风险管理领域深入发展。" 
+                          data-en="Become a composite talent proficient in both finance and law, developing deeply in financial innovation or risk management.">
+                          成为精通金融与法律的复合型人才，在金融创新或风险管理领域深入发展。
+                    </span>
+                </li>
+            </ul>
+        </section>
 
-<div class="card">
-<b>Bond Market Study</b>
-<p data-zh="分析中国债券市场结构与发展趋势。"
- data-en="Analysis of China's bond market structure and development.">
-中国债券市场研究
-</p>
-</div>
+        <!-- 六、个人兴趣 -->
+        <section>
+            <h2 data-zh="个人兴趣" data-en="Personal Interests">个人兴趣</h2>
+            <ul>
+                <li data-zh="关注宏观经济动态与金融市场走势。" data-en="Following macroeconomic dynamics and financial market trends.">关注宏观经济动态与金融市场走势。</li>
+                <li data-zh="阅读金融传记、经济史类书籍。" data-en="Reading financial biographies and economic history books.">阅读金融传记、经济史类书籍。</li>
+                <li data-zh="研究金融科技应用与创新案例。" data-en="Researching Fintech applications and innovation cases.">研究金融科技应用与创新案例。</li>
+                <li data-zh="参加行业讲座、研讨会，拓展专业视野。" data-en="Attending industry lectures and seminars to broaden professional horizons.">参加行业讲座、研讨会，拓展专业视野。</li>
+            </ul>
+        </section>
 
-<div class="card">
-<b>Portfolio Simulation</b>
-<p data-zh="投资组合管理与股票模拟交易实践。"
- data-en="Portfolio management and stock market simulation.">
-投资组合模拟
-</p>
-</div>
+        <!-- 七、联系方式 -->
+        <section>
+            <h2 data-zh="联系方式" data-en="Contact Information">联系方式</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-label" data-zh="邮箱" data-en="Email">邮箱</span>
+                    <span>[您的邮箱地址]</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label" data-zh="领英/社交账号" data-en="LinkedIn / Social Media">领英/社交账号</span>
+                    <span>[您的账号链接]</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label" data-zh="学校地址" data-en="School Address">学校地址</span>
+                    <span data-zh="华东政法大学松江校区" data-en="Songjiang Campus, ECUPL">华东政法大学松江校区</span>
+                </div>
+            </div>
+        </section>
+    </main>
 
-</div>
-</section>
+    <footer>
+        <p>&copy; 2026 项森鑫 | East China University of Political Science and Law</p>
+    </footer>
 
-<section>
-<h2 data-zh="技能" data-en="Skills">技能</h2>
+    <script>
+        let currentLang = 'zh'; // 默认中文
 
-<div class="card skills">
-
-<div class="skill">Financial Analysis</div>
-<div class="skill">Data Analysis</div>
-<div class="skill">Excel</div>
-<div class="skill">PowerPoint</div>
-<div class="skill">Python</div>
-<div class="skill">Wind Terminal</div>
-<div class="skill">Market Research</div>
-
-</div>
-
-</section>
-
-<section>
-<h2 data-zh="未来规划" data-en="Career Plan">未来规划</h2>
-
-<div class="card">
-<p data-zh="短期目标是在大学期间夯实金融理论基础，并参与金融机构实习。"
- data-en="Short-term goal: strengthen financial foundations and participate in internships during university.">
-短期目标
-</p>
-
-<p data-zh="中期目标是在金融机构或金融科技公司从事研究与投资相关工作。"
- data-en="Mid-term goal: work in financial institutions or fintech companies in research or investment roles.">
-中期目标
-</p>
-
-<p data-zh="长期愿景是成为精通金融与法律的复合型专业人才。"
- data-en="Long-term vision: become a professional combining expertise in finance and law.">
-长期愿景
-</p>
-
-</div>
-
-</section>
-
-<section>
-<h2 data-zh="联系方式" data-en="Contact">联系方式</h2>
-
-<div class="card">
-
-<p>Email: your@email.com</p>
-
-<div class="social">
-<a href="#">LinkedIn</a>
-<a href="#">GitHub</a>
-</div>
-
-<p data-zh="地址：华东政法大学松江校区"
- data-en="Address: ECUPL Songjiang Campus">
-地址：华东政法大学松江校区
-</p>
-
-</div>
-
-</section>
-
-</div>
-
-<footer>
-© 2026 Xiang Senxin
-</footer>
-
-<script>
-
-let lang='zh'
-
-function toggleLanguage(){
-
-lang = lang==='zh' ? 'en' : 'zh'
-
-const btn=document.querySelector('.lang-btn')
-btn.innerText = lang==='zh' ? 'English' : '中文'
-
-
-document.querySelectorAll('[data-zh]').forEach(el=>{
-
-el.innerText = el.dataset[lang]
-
-})
-
-}
-
-</script>
-
+        function toggleLanguage() {
+            const elements = document.querySelectorAll('[data-zh][data-en]');
+            
+            if (currentLang === 'zh') {
+                // 切换到英文
+                elements.forEach(el => {
+                    el.textContent = el.getAttribute('data-en');
+                });
+                currentLang = 'en';
+                document.documentElement.lang = 'en';
+            } else {
+                // 切换到中文
+                elements.forEach(el => {
+                    el.textContent = el.getAttribute('data-zh');
+                });
+                currentLang = 'zh';
+                document.documentElement.lang = 'zh-CN';
+            }
+        }
+    </script>
 </body>
 </html>
