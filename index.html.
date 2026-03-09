@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Xiang Senxin | Academic Homepage</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<button class="lang-btn" onclick="toggleLanguage()">English</button>
+
+<header>
+
+<img src="assets/avatar.jpg" class="avatar">
+
+<h1 data-zh="项森鑫" data-en="Xiang Senxin">项森鑫</h1>
+
+<p
+data-zh="金融学本科生 | 华东政法大学"
+data-en="Finance Undergraduate | ECUPL">
+金融学本科生
+</p>
+
+<div class="links">
+
+<a href="assets/cv.pdf">CV</a>
+
+<a href="#">LinkedIn</a>
+
+<a href="#">GitHub</a>
+
+</div>
+
+</header>
+
+<section>
+
+<h2 data-zh="个人简介" data-en="About">个人简介</h2>
+
+<p
+data-zh="华东政法大学商学院金融学专业本科生，研究兴趣包括资本市场、投资分析与金融科技，同时关注金融监管与法律问题。"
+data-en="Finance undergraduate at ECUPL. Research interests include capital markets, investment analysis, fintech, and financial regulation.">
+
+华东政法大学商学院金融学专业本科生。
+</p>
+
+</section>
+
+<section>
+
+<h2 data-zh="研究兴趣" data-en="Research Interests">研究兴趣</h2>
+
+<ul>
+
+<li>Digital Finance</li>
+
+<li>Green Finance</li>
+
+<li>Capital Markets</li>
+
+<li>Financial Regulation</li>
+
+</ul>
+
+</section>
+
+<section>
+
+<h2 data-zh="研究项目" data-en="Research Projects">研究项目</h2>
+
+<ul>
+
+<li>
+FinTech and Traditional Banking
+</li>
+
+<li>
+Development of China's Bond Market
+</li>
+
+<li>
+Portfolio Simulation Project
+</li>
+
+</ul>
+
+</section>
+
+<section>
+
+<h2 data-zh="工作论文" data-en="Working Papers">工作论文</h2>
+
+<ul>
+
+<li>
+The Impact of FinTech on Banking
+</li>
+
+<li>
+Analysis of China's Bond Market
+</li>
+
+</ul>
+
+</section>
+
+<section>
+
+<h2 data-zh="技能" data-en="Skills">技能</h2>
+
+<ul>
+
+<li>Financial Analysis</li>
+
+<li>Excel / Python</li>
+
+<li>Wind / Financial Data</li>
+
+<li>Market Research</li>
+
+</ul>
+
+</section>
+
+<footer>
+
+© 2026 Xiang Senxin
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
